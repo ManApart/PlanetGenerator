@@ -9,10 +9,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
 import javafx.scene.paint.Color;
-import rak.planetGenerator.PlanetGeneratorApplication;
 import rak.planetGenerator.model.Biome;
 import rak.planetGenerator.model.BiomeAttributes;
 import rak.planetGenerator.model.BiomeCollection;
+import rak.utility.ResourceLoader;
 
 public class BiomeParser {
 	
@@ -33,7 +33,7 @@ public class BiomeParser {
 	private ArrayNode parseBiomesJson(String biomeFileName) throws IOException, JsonProcessingException {
 		String name = "json/" + biomeFileName +".json";
 //		InputStream in = getClass().getResourceAsStream(name);
-		InputStream in = PlanetGeneratorApplication.getResourceAsStream(name);
+		InputStream in = ResourceLoader.getResourceAsStream(name);
 		ObjectMapper mapper = new ObjectMapper();
 		ArrayNode root = (ArrayNode) mapper.readTree(in);
 		return root;

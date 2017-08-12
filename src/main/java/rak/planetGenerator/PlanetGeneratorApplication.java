@@ -1,7 +1,6 @@
 package rak.planetGenerator;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +18,7 @@ import rak.planetGenerator.ui.planet.PlanetView;
 import rak.planetGenerator.ui.planet.PlanetViewOverlay;
 import rak.planetGenerator.ui.planet.PlanetViewer;
 import rak.utility.DebugTimer;
+import rak.utility.ResourceLoader;
 
 public class PlanetGeneratorApplication extends Application {
 	private static Stage primaryStage;
@@ -35,6 +35,7 @@ public class PlanetGeneratorApplication extends Application {
 	
 	
 	public static void main(String[] args) {
+		ResourceLoader.setRootClass(PlanetGeneratorApplication.class);
 		launch(args);
     }
 
@@ -47,7 +48,7 @@ public class PlanetGeneratorApplication extends Application {
 		
         primaryStage.setTitle("Planet Generator");
         
-        primaryStage.getIcons().add(new Image(getResourceAsStream("images/Logo Icon.png")));
+        primaryStage.getIcons().add(new Image(ResourceLoader.getResourceAsStream("images/Logo Icon.png")));
         setScene(MAIN_MENU);
         primaryStage.show();
 	}
@@ -109,8 +110,4 @@ public class PlanetGeneratorApplication extends Application {
 		planetViewer.viewRegion(x, y);
 	}
 	
-	public static InputStream getResourceAsStream(String pathToResource) {
-		return PlanetGeneratorApplication.class.getResourceAsStream(pathToResource);
-	}
-
 }
