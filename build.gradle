@@ -9,8 +9,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 sourceSets {
-    test {
+    main {
         resources {
+            srcDir 'src/main/resource'
+        }
+    }
+    test {
+        java {
             srcDir "src/test/groovy"
         }
     }
