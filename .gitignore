@@ -5,3 +5,7 @@ bin/
 target/
 .svn
 build/
+.gradle/
+.idea/
+*.iml
+out/

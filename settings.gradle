@@ -1,0 +1,4 @@
+rootProject.name = 'PlanetGenerator'
+
+include ":utility"
+project(":utility").projectDir = file("../StarshipUtility")
