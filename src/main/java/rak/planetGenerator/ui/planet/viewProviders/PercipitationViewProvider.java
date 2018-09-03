@@ -11,7 +11,7 @@ public class PercipitationViewProvider extends GraphicsContextViewProvider {
 	@Override
 	public void drawView(Planet planet, Pane viewBackground) {
 		GraphicsContext gg = createGraphicsContext(viewBackground, planet.getSize());
-		ColorSpectrum colorSpectrum = ColorSpectrum.percipitationSpectrum();
+		ColorSpectrum colorSpectrum = ColorSpectrum.precipitationSpectrum();
 		
 		for (int x=0; x<planet.getSize(); x++){
 			for (int y=0; y<planet.getSize(); y++){

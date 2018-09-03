@@ -2,7 +2,7 @@ package rak.planetGenerator.factories;
 
 import rak.planetGenerator.generators.BiomeGenerator;
 import rak.planetGenerator.generators.HeightMapGenerator;
-import rak.planetGenerator.generators.PercipitationMapGenerator;
+import rak.planetGenerator.generators.PrecipitationMapGenerator;
 import rak.planetGenerator.generators.PlanetGenerator;
 import rak.planetGenerator.generators.TemperatureMapGenerator;
 import rak.planetGenerator.generators.arguments.GenerationArguments;
@@ -19,15 +19,15 @@ public class GeneratorFactory {
 		defaultArguments.apply(temperatureGenerator);
 		overrideArguments.apply(temperatureGenerator);
 		
-		PercipitationMapGenerator percipitationMapGenerator = new PercipitationMapGenerator();
-		defaultArguments.apply(percipitationMapGenerator);
-		overrideArguments.apply(percipitationMapGenerator);
+		PrecipitationMapGenerator precipitationMapGenerator = new PrecipitationMapGenerator();
+		defaultArguments.apply(precipitationMapGenerator);
+		overrideArguments.apply(precipitationMapGenerator);
 		
 		BiomeGenerator biomeGenerator = new BiomeGenerator();
 		defaultArguments.apply(biomeGenerator);
 		overrideArguments.apply(biomeGenerator);
 		
-		return new PlanetGenerator(heightGenerator, temperatureGenerator, percipitationMapGenerator, biomeGenerator);
+		return new PlanetGenerator(heightGenerator, temperatureGenerator, precipitationMapGenerator, biomeGenerator);
 	}
 	
 	public PlanetGenerator createGeneratorByType(PlanetType type, GenerationArguments overrideArguments){

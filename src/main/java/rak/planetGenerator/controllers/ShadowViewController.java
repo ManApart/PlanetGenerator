@@ -68,7 +68,7 @@ public class ShadowViewController {
 	
 	@FXML
 	private void toggleShadow(){
-		PlanetGeneratorApplication.toggleOverlay(PlanetViewOverlay.SHADOW);
+		PlanetGeneratorApplication.Companion.toggleOverlay(PlanetViewOverlay.SHADOW);
 		reDrawPlanet();
 	}
 	

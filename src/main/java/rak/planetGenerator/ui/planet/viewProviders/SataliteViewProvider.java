@@ -11,7 +11,7 @@ public class SataliteViewProvider extends GraphicsContextViewProvider {
 	@Override
 	public void drawView(Planet planet, Pane viewBackground) {
 		GraphicsContext gg = createGraphicsContext(viewBackground, planet.getSize());
-		ColorSpectrum colorSpectrum = ColorSpectrum.sataliteSpectrum();
+		ColorSpectrum colorSpectrum = ColorSpectrum.satelliteSpectrum();
 		
 		for (int x=0; x<planet.getSize(); x++){
 			for (int y=0; y<planet.getSize(); y++){

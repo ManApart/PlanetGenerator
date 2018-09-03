@@ -2,7 +2,7 @@ package rak.planetGenerator.generators.arguments;
 
 import rak.planetGenerator.generators.BiomeGenerator;
 import rak.planetGenerator.generators.HeightMapGenerator;
-import rak.planetGenerator.generators.PercipitationMapGenerator;
+import rak.planetGenerator.generators.PrecipitationMapGenerator;
 import rak.planetGenerator.generators.TemperatureMapGenerator;
 
 public class GenerationArguments {
@@ -31,7 +31,7 @@ public class GenerationArguments {
 		}		
 	}
 
-	public void apply(PercipitationMapGenerator generator) {
+	public void apply(PrecipitationMapGenerator generator) {
 		if (percipitationArguments != null){
 			percipitationArguments.apply(generator);
 		}		

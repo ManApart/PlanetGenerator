@@ -13,18 +13,18 @@ public class PlanetGenerator {
 	
 	private HeightMapGenerator heightGenerator;
 	private TemperatureMapGenerator temperatureGenerator;
-	private PercipitationMapGenerator percipitationMapGenerator;
+	private PrecipitationMapGenerator precipitationMapGenerator;
 	private BiomeGenerator biomeGenerator;
 	
 	private DebugTimer debugTimer;
 	
 	public PlanetGenerator(HeightMapGenerator heightGenerator,
-		TemperatureMapGenerator temperatureGenerator,
-		PercipitationMapGenerator percipitationMapGenerator,
-		BiomeGenerator biomeGenerator){
+                           TemperatureMapGenerator temperatureGenerator,
+                           PrecipitationMapGenerator precipitationMapGenerator,
+                           BiomeGenerator biomeGenerator){
 		this.heightGenerator = heightGenerator;
 		this.temperatureGenerator = temperatureGenerator;
-		this.percipitationMapGenerator = percipitationMapGenerator;
+		this.precipitationMapGenerator = precipitationMapGenerator;
 		this.biomeGenerator = biomeGenerator;
 	}
 	
@@ -40,7 +40,7 @@ public class PlanetGenerator {
 		int[][] temperatureMap = temperatureGenerator.generateTemperatureMap(heightMap);
 		debugInterval("Temperature Generation");
 		
-		int[][] percipitationMap = percipitationMapGenerator.generatePercipitationMap(seed, heightMap, temperatureMap);
+		int[][] percipitationMap = precipitationMapGenerator.generatePrecipitationMap(seed, heightMap, temperatureMap);
 		debugInterval("Percipitation Generation");
 		
 		BiomeCollection biomes = biomeGenerator.generateBiomes();

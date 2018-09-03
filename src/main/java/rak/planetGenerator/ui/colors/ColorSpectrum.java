@@ -1,11 +1,10 @@
 package rak.planetGenerator.ui.colors;
 
 
-
 import javafx.scene.paint.Color;
-import rak.utility.interpolater.Interpolater;
+import rak.utility.interpolater.Interpolator;
 
-public class ColorSpectrum extends Interpolater<ColorKeyframe>{
+public class ColorSpectrum extends Interpolator<ColorKeyframe> {
 	
 	public void addColor(int position, Color color){
 		addKeyFrame(new ColorKeyframe(position, color));
@@ -38,7 +37,7 @@ public class ColorSpectrum extends Interpolater<ColorKeyframe>{
 		return spectrum;
 	}
 	
-	public static ColorSpectrum sataliteSpectrum(){
+	public static ColorSpectrum satelliteSpectrum(){
 		ColorSpectrum spectrum = new ColorSpectrum();
 		
 		spectrum.addColor(-120, new Color(0.0,0.19607843458652496,0.5882353186607361,1));
@@ -54,7 +53,7 @@ public class ColorSpectrum extends Interpolater<ColorKeyframe>{
 		return spectrum;
 	}
 	
-	public static ColorSpectrum percipitationSpectrum(){
+	public static ColorSpectrum precipitationSpectrum(){
 		ColorSpectrum spectrum = new ColorSpectrum();
 		
 		spectrum.addColor(0, new Color(1,1,.99,1));

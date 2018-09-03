@@ -61,7 +61,7 @@ public class MainMenuController {
 			public void changed(ObservableValue<? extends PlanetType> observable, PlanetType oldValue, PlanetType newValue) {
 				//Changing the type of planet to generate resets everything
 				generationArguments = new GenerationArguments();
-				PlanetGeneratorApplication.setGenerator(newValue, generationArguments);
+				PlanetGeneratorApplication.Companion.setGenerator(newValue, generationArguments);
 				generate();
 				resetArgPanels();
 			}
@@ -84,13 +84,13 @@ public class MainMenuController {
 		viewBackground.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				PlanetGeneratorApplication.viewRegion((int) event.getX(), (int) event.getY());
+				PlanetGeneratorApplication.Companion.viewRegion((int) event.getX(), (int) event.getY());
 			}
 		});
 	}
 	
 	public void createNewGenerator() {
-		PlanetGeneratorApplication.setGenerator(getCurrentPlanetType(), generationArguments);
+		PlanetGeneratorApplication.Companion.setGenerator(getCurrentPlanetType(), generationArguments);
 		generate();
 	}
 
@@ -108,7 +108,7 @@ public class MainMenuController {
 		
 		if (args.isValid()){
 			message.setText("Success");
-			PlanetGeneratorApplication.generatePlanet(args.getSeed(), args.getDensity(), args.getScale());
+			PlanetGeneratorApplication.Companion.generatePlanet(args.getSeed(), args.getDensity(), args.getScale());
 			reDrawPlanet();
 		} else {
 			message.setText("ERROR");
@@ -125,7 +125,7 @@ public class MainMenuController {
 	
 	@FXML
 	private void toggleSphere(){
-		PlanetGeneratorApplication.toggleOverlay(PlanetViewOverlay.SPHERE);
+		PlanetGeneratorApplication.Companion.toggleOverlay(PlanetViewOverlay.SPHERE);
 		reDrawPlanet();
 	}
 	
@@ -138,7 +138,7 @@ public class MainMenuController {
 	@FXML
 	public void reDrawPlanet(){
 		PlanetView view = viewType.getSelectionModel().getSelectedItem();
-		PlanetGeneratorApplication.drawView(view, viewBackground);
+		PlanetGeneratorApplication.Companion.drawView(view, viewBackground);
 	}
 
 	public GenerationArguments getGenerationArguments(){
