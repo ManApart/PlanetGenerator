@@ -16,11 +16,11 @@ class DesertBandGenerator {
     fun generateDesertBands(seed: Long): ArrayList<DesertBand> {
         val bands = ArrayList<DesertBand>()
         val numberOfBands = MathFunctions.randRange(seed, 0, 3)
-
-        for (i in 0 until numberOfBands) {
-            val band = generateBand(seed)
-            bands.add(band)
-        }
+//
+//        for (i in 0 until numberOfBands) {
+//            val band = generateBand(seed)
+//            bands.add(band)
+//        }
 
         return bands
     }
